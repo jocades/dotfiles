@@ -1,13 +1,17 @@
-## My Qtile dotfiles 💙
-I started using Linux in April 2022 and as soon as I discovered Tiling Window Managers there was no way back.<br>
+## 💙 My Qtile dotfiles
 
-After messing around with some WMs  like Awesome and Bspwm I was getting tired of copy / pasting config files and tweaking them into my needs.<br>
+![dot2](https://user-images.githubusercontent.com/104111071/171435459-648aabd4-4348-46b0-abf9-8cf8c3a4d7b8.png)
 
-That was until I discovered Qtile which is fully written in python, main reason why I decided to stick with it since it's the language I'm most comfortable working with.<br>
+I started using **Linux** in April 2022 and as soon as I discovered **Tiling Window Managers** there was no way back.<br>
 
-After some time and effort I created my own Desktop Enviroment that fullfills all my needs just the way I want it.<br>
+After messing around with some WMs  like [**Awesome**](https://awesomewm.org/) and [**Bspwm**](https://wiki.archlinux.org/title/bspwm) I was getting tired of copy / pasting config files and tweaking them into my needs.<br>
+
+That was until I discovered [**Qtile**](http://www.qtile.org/) which is fully written in **python**, main reason why I decided to stick with it since it's the language I'm most comfortable working with.<br>
+
+After some time and effort I created my own **Desktop Enviroment** that fullfills all my needs **just the way I want it**.<br>
 
 Isn't that satisfying?
+
 
 ## 🔥 SETUP
 
