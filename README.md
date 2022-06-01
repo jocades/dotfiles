@@ -13,8 +13,10 @@ Isn't that satysfing?
 
 - **OS**: [Arch Linux](https://archlinux.org/)
 - **WM**: [qtile](https://docs.qtile.org/en/latest/index.html#)
+- **Compositor**: [picom](https://github.com/yshui/picom)
 - **Shell**: [zsh](https://www.zsh.org/)
-- **Terminal**: [kitty](https://sw.kovidgoyal.net/kitty/)
-- **File Manager**: [thunar](https://wiki.archlinux.org/title/thunar)
-- **Editor**: [vscode](https://github.com/microsoft/vscode) / [neovim](https://github.com/neovim/neovim)
+- **Terminal**: [kitty](https://sw.kovidgoyal.net/kitty/) / [p10k](https://github.com/romkatv/powerlevel10k)
 - **App Launcher**: [rofi](https://github.com/davatorium/rofi)
+- **File Manager**: [thunar](https://wiki.archlinux.org/title/thunar) / [ranger](https://github.com/ranger/ranger)
+- **Editor**: [vscode](https://github.com/microsoft/vscode) / [neovim](https://github.com/neovim/neovim)
+
