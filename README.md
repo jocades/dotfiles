@@ -7,7 +7,7 @@ That was until I discovered Qtile which is fully written in python, main reason 
 
 After some time and effort I created my own Desktop Enviroment that fullfills all my needs just the way I want it.<br>
 
-Isn't that satysfing?
+Isn't that satisfying?
 
 ## 🔥 SETUP
 
