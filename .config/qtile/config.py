@@ -229,7 +229,7 @@ def init_widgets_list():
             margin_x=0,
             padding_y=5,
             padding_x=3,
-            borderwidth=3,
+            borderwidth=2,
             active=colors[2],
             inactive=gruvbox['green'],
             rounded=False,
@@ -406,8 +406,8 @@ widgets_screen2 = init_widgets_screen2()
 
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=20, opacity=1)),
-            Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=20, opacity=1))]
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=20, opacity=1, margin=[5,5,0,5])),
+            Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=20, opacity=1, margin=[5,5,0,5]))]
 
 
 if __name__ in ["config", "__main__"]:
