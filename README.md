@@ -1,4 +1,7 @@
-## My Qtile dotfiles 💙
+## 💙 My Qtile dotfiles
+
+![dot-round](https://user-images.githubusercontent.com/104111071/171857061-9c96a1dd-26df-4333-ba8f-cd9cddc887e1.png)
+
 I started using Linux in April 2022 and as soon as I discovered Tiling Window Managers there was no way back.<br>
 
 After messing around with some WMs  like Awesome and Bspwm I was getting tired of copy / pasting config files and tweaking them into my needs.<br>
