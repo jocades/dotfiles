@@ -129,14 +129,14 @@ keys = [
 #     Group("MUS", layout='monadtall'),
 #     Group("vBOX", layout='monadtall'),
 # ]
-
+ #  ", "   ", "   ", "   ", "  ", "   ", "   ", "   ", "   ",
 groups = [
     Group("1", label=""),
     Group("2", label=""),
-    Group("3", label=""),
-    Group("4", label=""),
-    Group("5", label=""),
-    Group("6", label=""),
+    Group("3", label=""),
+    Group("4", label=""),
+    Group("5", label=""),
+    Group("6", label=""),
     Group("7", label=""),
 ]
 
@@ -144,7 +144,7 @@ dgroups_key_binder = simple_key_binder("mod4")
 
 
 def init_layout_theme():
-    return {"margin": 5,
+    return {"margin": 8,
             "border_width": 0,
             "border_focus": "#71a381",
             "border_normal": "#4c566a",
@@ -265,7 +265,6 @@ def init_widgets_list():
             cursor=True,
             cursor_blink=0.5,
             max_history=100,
-            font="Iosevka Nerd Font",
             fontsize=12
         ),
         widget.TextBox(
@@ -327,7 +326,6 @@ def init_widgets_list():
             background=colors[11],
             foreground=colors[2],
             padding=5,
-            mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("kitty -e bashtop")},
         ),
         widget.TextBox(
             text="\ue0be",
@@ -348,7 +346,7 @@ def init_widgets_list():
         widget.Memory(
             background=colors[12],
             foreground=colors[2],
-            mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('kitty htop')},
+            mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('kitty -e bashtop')},
             fmt='{}',
             measure_mem = 'G',
         ),
@@ -376,6 +374,7 @@ def init_widgets_list():
             padding=0,
             background=colors[7],
             foreground=colors[2],
+            mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("kitty -e bashtop")},
         ),
         widget.CPU(
             format='{freq_current}GHz {load_percent}%',
@@ -383,6 +382,7 @@ def init_widgets_list():
             foreground=colors[2],
             icons_size=18,
             padding=4,
+            mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("kitty -e bashtop")},
         ),
         widget.TextBox(
             text="\ue0be",
@@ -487,6 +487,7 @@ def init_widgets_list():
             padding=0,
             background=colors[16],
             foreground=colors[0],
+            #mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("kitty feh --recursive --bg-scale --randomize ~/images/wallpapers/")},
         ),
         widget.Clock(
             foreground=colors[0],
@@ -525,8 +526,8 @@ widgets_screen2 = init_widgets_screen2()
 
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=25, opacity=1, margin=[5,8,0,8])),
-            Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=25, opacity=1, margin=[5,8,0,8]))]
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=25, opacity=1, margin=[8,8,0,8])),
+            Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=25, opacity=1, margin=[8,8,0,8]))]
 
 
 if __name__ in ["config", "__main__"]:
