@@ -53,7 +53,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # ----Manual configuration---- #
 
-PATH=/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/j0rdi/.local/bin:
+PATH=/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/j0rdi/.local/bin:/home/j0rdi/prog/scripts/checkSize:
 
 # ---- ALIASES ---- #
 
@@ -143,9 +143,26 @@ bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 bindkey "^[[3~" delete-char
 	# skip word = alt + {arrowKeys}
-bindkey "[[1;3C" forward-word
-# bindkey "[[1;3D" backward-wordsource ~/powerlevel10k/powerlevel10k.zsh-theme
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 
+# Clear Screen == Ctrl + L 
+function clear-scrollback-buffer {
+  # Behavior of clear: 
+  # 1. clear scrollback if E3 cap is supported (terminal, platform specific)
+  # 2. then clear visible screen
+  # For some terminal 'e[3J' need to be sent explicitly to clear scrollback
+  clear && printf '\e[3J'
+  # .reset-prompt: bypass the zsh-syntax-highlighting wrapper
+  # https://github.com/sorin-ionescu/prezto/issues/1026
+  # https://github.com/zsh-users/zsh-autosuggestions/issues/107#issuecomment-183824034
+  # -R: redisplay the prompt to avoid old prompts being eaten up
+  # https://github.com/Powerlevel9k/powerlevel9k/pull/1176#discussion_r299303453
+  zle && zle .reset-prompt && zle -R
+}
+
+zle -N clear-scrollback-buffer
+bindkey '^L' clear-scrollback-buffer
 
 # ---- Plugins ---- #
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -167,7 +184,7 @@ function mkt(){
 	mkdir {dir1,dir2,dir3,dir4}
 }
 
-# Beautify 'manual' colors
+# Beautify 'man' colors
 function man() {
     env \
     LESS_TERMCAP_mb=$'\e[01;31m' \
