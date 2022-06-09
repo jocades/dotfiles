@@ -1,4 +1,4 @@
-## 💙 My Qtile dotfiles
+## 💙 My Qtile rice
 
 ![dot-round2](https://user-images.githubusercontent.com/104111071/171956932-4eecc02e-0cb0-4be2-9a3a-1e0d7c14c24c.png)
 
