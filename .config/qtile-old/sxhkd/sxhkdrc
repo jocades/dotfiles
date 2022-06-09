@@ -1,0 +1,103 @@
+#################################################################
+# KEY BINDINGS, jordi
+#################################################################
+
+
+#################################################################
+# SUPER + KEY
+#################################################################
+#Soundcontrol
+super + ctrl + v
+    pavucontrol
+
+#Xkill
+super + Escape
+    xkill
+
+#################################################################
+#     FUNCTION KEYS
+#################################################################
+
+#################################################################
+# SUPER + SHIFT KEYS
+#################################################################
+
+#reload sxhkd:
+super + shift + s
+	pkill -USR1 -x sxhkd
+
+#dmenu CLI
+# super + shift + d
+# 	dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
+
+#################################################################
+# CONTROL + ALT KEYS
+#################################################################
+
+#Picom Toggle
+ctrl + alt + o
+    ~/.config/qtile/scripts/picom-toggle.sh
+
+#Xfce4-settings-manager
+ctrl + alt + m
+     xfce4-settings-manager
+
+
+#################################################################
+# CONTROL + SHIFT KEYS
+#################################################################
+
+#Xcfe4-TaskManager
+ctrl + shift + Escape
+    xfce4-taskmanager
+
+
+#################################################################
+#     SCREENSHOTS
+#################################################################
+
+#Scrot
+Print
+    scrot 'print-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
+
+
+
+#################################################################
+#     MULTIMEDIA KEYS
+#################################################################
+
+# #Raises volume
+# XF86AudioRaiseVolume
+#     amixer set Master 10%+
+
+# #Lowers volume
+# XF86AudioLowerVolume
+#     amixer set Master 10%-
+
+# #Mute
+# XF86AudioMute
+#     amixer -D pulse set Master 1+ toggle
+
+#################################################################
+#    VARIETY KEYS WITH PYWAL
+#################################################################
+
+#Wallpaper trash
+# alt + shift + t
+#     variety -t && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
+
+# #Wallpaper next
+# alt + shift + n
+#     variety -n && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
+
+# #Wallpaper previous
+# alt + shift + p
+#     variety -p && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
+
+# #Wallpaper favorite
+# alt + shift + f
+#     variety -f && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
+
+# #Wallpaper update
+# alt + shift + u
+#     wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
