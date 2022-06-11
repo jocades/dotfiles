@@ -19,11 +19,13 @@ export TERM='kitty'
 export EDITOR='nvim'
 export VISUAL='nvim'
 export HISTCONTROL=ignoreboth:erasedups
-#export PAGER='most'
+
+# format `time` command
+export TIMEFMT=$'%J\n%U user\n%S system\n%P cpu\n%*E total'
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
 # Use modern completion system
@@ -67,6 +69,8 @@ alias cat='bat'
 alias cl='clear'
 alias e='ranger'
 
+# Python
+alias py="/usr/bin/python"
 # open img in terminal
 alias icat="kitty +kitten icat"
 
