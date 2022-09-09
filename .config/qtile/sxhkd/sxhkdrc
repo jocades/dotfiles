@@ -2,102 +2,76 @@
 # KEY BINDINGS, jordi
 #################################################################
 
+# Brave
+super + b
+brave
 
-#################################################################
-# SUPER + KEY
-#################################################################
-#Soundcontrol
-super + ctrl + v
-    pavucontrol
+super + c
+code
 
-#Xkill
+super + Return
+kitty
+
+super + r
+cutefish-launcher
+
+super + q
+kill
+
 super + Escape
-    xkill
+xkill
 
-#################################################################
-#     FUNCTION KEYS
-#################################################################
-
-#################################################################
-# SUPER + SHIFT KEYS
-#################################################################
-
-#reload sxhkd:
+# reload sxhkd:
 super + shift + s
-	pkill -USR1 -x sxhkd
+pkill - USR1 - x sxhkd
 
-#dmenu CLI
-# super + shift + d
-# 	dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
+# Raises volume
+XF86AudioRaiseVolume
+amixer set Master 10 % +
 
-#################################################################
-# CONTROL + ALT KEYS
-#################################################################
+# Lowers volume
+XF86AudioLowerVolume
+amixer set Master 10 % -
 
-#Picom Toggle
-ctrl + alt + o
-    ~/.config/qtile/scripts/picom-toggle.sh
-
-#Xfce4-settings-manager
-ctrl + alt + m
-     xfce4-settings-manager
+# Mute
+XF86AudioMute
+amixer - D pulse set Master 1 + toggle
 
 
-#################################################################
-# CONTROL + SHIFT KEYS
-#################################################################
+# PLAY
+XF86AudioPlay
+playerctl play-pause
 
-#Xcfe4-TaskManager
-ctrl + shift + Escape
-    xfce4-taskmanager
+# Next
+XF86AudioNext
+playerctl next
+
+# previous
+XF86AudioPrev
+playerctl previous
+
+# Stop
+XF86AudioStop
+playerctl stop
+
+# Brightness up
+XF86MonBrightnessUp
+xbacklight - inc 10
+
+# Brightness down
+XF86MonBrightnessDown
+xbacklight - dec 10
+
+# Playerctl works for Pragha, Spotify and others
+# Delete the line for playerctl if you want to use mpc
+# and replace it with the corresponding code
+# mpc works for e.g.ncmpcpp
+# mpc toggle
+# mpc next
+# mpc prev
+# mpc stop
 
 
-#################################################################
-#     SCREENSHOTS
-#################################################################
-
-#Scrot
+# Scrot
 Print
-    scrot 'print-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
-
-
-
-#################################################################
-#     MULTIMEDIA KEYS
-#################################################################
-
-# #Raises volume
-# XF86AudioRaiseVolume
-#     amixer set Master 10%+
-
-# #Lowers volume
-# XF86AudioLowerVolume
-#     amixer set Master 10%-
-
-# #Mute
-# XF86AudioMute
-#     amixer -D pulse set Master 1+ toggle
-
-#################################################################
-#    VARIETY KEYS WITH PYWAL
-#################################################################
-
-#Wallpaper trash
-# alt + shift + t
-#     variety -t && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-
-# #Wallpaper next
-# alt + shift + n
-#     variety -n && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-
-# #Wallpaper previous
-# alt + shift + p
-#     variety -p && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-
-# #Wallpaper favorite
-# alt + shift + f
-#     variety -f && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-
-# #Wallpaper update
-# alt + shift + u
-#     wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
+scrot 'print-%Y-%m-%d-%s_screenshot_$wx$h.jpg' - e 'mv $f $$(xdg-user-dir PICTURES)'

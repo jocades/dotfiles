@@ -1,0 +1,124 @@
+{
+  // VIM KEYS
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": false,
+  "vim.hlsearch": true,
+  "vim.sneak": true,
+  "vim.easymotionMarkerooundColor": "#020202",
+  "vim.leader": "<space>",
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<leader>", "d"],
+      "after": ["d", "d"]
+    },
+    {
+      "before": ["<tab>"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    {
+      "before": ["<S-tab>"],
+      "commands": ["workbench.action.previousEditor"]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>", "l"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [">"],
+      "after": [">", "g", "v"]
+    },
+    {
+      "before": ["<"],
+      "after": ["<", "g", "v"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "w"],
+      "commands": ["workbench.action.splitEditor"]
+    },
+    {
+      "before": ["<leader>", "x"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["revealInExplorer"]
+    },
+    {
+      "before": ["<leader>", "h"],
+      "after": ["_"]
+    },
+    {
+      "before": ["<leader>", "l"],
+      "after": ["$"]
+    },
+    {
+      "before": ["<leader>", "t"],
+      "commands": ["workbench.action.terminal.new"]
+    }
+  ],
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-t>": false,
+    // VS Code new marker @ next occurence
+    "<C-c>": false,
+    // Cut
+    "<C-x>": false,
+    // Paste
+    "<C-v>": false,
+    "<C-z>": false,
+    "<C-y>": false,
+    "<C-d>": false
+  },
+  // EDITOR SETTINGS
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "editor.fontSize": 14,
+  "editor.wordWrap": "off",
+  "editor.wrappingIndent": "deepIndent",
+  "editor.minimap.enabled": true,
+  "editor.scrollbar.vertical": "hidden",
+  "editor.tokenColorCustomizations": {
+    "comments": "#42553c"
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorCustomizations": {
+    "editorRuler.foreground": "#f13434",
+    "statusBar.foreground": "#ffffff",
+    "statusBar.background": "#031f27",
+    "editorCursor.foreground": "#ccc7c7",
+    "terminalCursor.foreground": "#ccc7c7"
+  },
+  "workbench.colorTheme": "Night Owl (No Italics)",
+  "security.workspace.trust.untrustedFiles": "open",
+  "glassit.alpha": 230,
+  "explorer.confirmDelete": false,
+  "git.confirmSync": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.semi": false,
+  "editor.formatOnSave": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.fontLigatures": false,
+  "gitlens.codeLens.scopes": ["document", "containers"],
+  "gitlens.currentLine.enabled": false,
+  "editor.cursorBlinking": "solid",
+  "workbench.activityBar.visible": true,
+  "workbench.sideBar.location": "right",
+  "explorer.confirmDragAndDrop": false,
+  "git.enableSmartCommit": true,
+  "files.associations": {
+    "qtilekeys": "bat"
+  }
+}
