@@ -118,7 +118,7 @@ keys.extend([
 groups = [
     Group("1", label="1", layout='columns', spawn='brave'),
     Group("2", label="2", layout='columns', spawn='kitty -e tmux a'),
-    Group("3", label="3"),
+    Group("3", label="3", layout='columns'),
     Group("4", label="4"),
     Group("5", label="5"),
     Group("6", label="6"),

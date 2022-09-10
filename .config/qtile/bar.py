@@ -194,7 +194,7 @@ def init_widgets_list():
             highlight_method="line",
             this_current_screen_border='#FF4C29',
             this_screen_border='#EEB76B',
-            other_current_screen_border=colors[6],
+            other_current_screen_border='#FF4C29',
             other_screen_border='#EEB76B',
             foreground=colors[2],
             background='#3A3845'

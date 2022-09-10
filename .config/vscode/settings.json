@@ -84,25 +84,81 @@
   // EDITOR SETTINGS
   "editor.fontFamily": "JetBrainsMono Nerd Font",
   "editor.fontSize": 14,
+  "workbench.iconTheme": "material-icon-theme",
+  "window.restoreWindows": "all",
+  "extensions.ignoreRecommendations": true,
   "editor.wordWrap": "off",
   "editor.wrappingIndent": "deepIndent",
   "editor.minimap.enabled": true,
   "editor.scrollbar.vertical": "hidden",
-  "editor.tokenColorCustomizations": {
-    "comments": "#42553c"
-  },
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorCustomizations": {
-    "editorRuler.foreground": "#f13434",
-    "statusBar.foreground": "#ffffff",
-    "statusBar.background": "#031f27",
-    "editorCursor.foreground": "#ccc7c7",
-    "terminalCursor.foreground": "#ccc7c7"
-  },
+  "workbench.sideBar.location": "left",
   "workbench.colorTheme": "Night Owl (No Italics)",
   "security.workspace.trust.untrustedFiles": "open",
   "glassit.alpha": 230,
   "explorer.confirmDelete": false,
+
+// Token colors
+  "editor.tokenColorCustomizations": {
+    "comments": "#42553c"
+  },
+
+// UI colors
+  "workbench.colorCustomizations": {
+    "editorCursor.foreground": "#e4e1e1",
+    "editor.lineHighlightBackground": "#0f1e24",
+    "editorGutter.background": "#0D181C",
+    "list.activeSelectionBackground": "#0D181C",
+    "list.hoverBackground": "#0D181C",
+    "editorWidget.background": "#0D181C",
+    "panel.background": "#0D181C",
+    "titleBar.activeBackground": "#0D181C",
+    "breadcrumbPicker.background": "#0D181C",
+    "settings.dropdownBackground": "#0D181C",
+    "settings.numberInputBackground": "#0D181C",
+    "settings.textInputBackground": "#0D181C",
+    "settings.checkboxBackground": "#0D181C",
+    "editor.background": "#061115",
+    "tab.inactiveBackground": "#061115",
+    "sideBar.background": "#000A0E",
+    "sideBar.dropBackground": "#000A0E",
+    "sideBarSectionHeader.background": "#000A0E",
+    "activityBar.background": "#000A0E",
+    "statusBar.background": "#000A0E",
+    "scrollbarSlider.activeBackground": "#000A0E",
+    "tab.activeBorder": "#ffff",
+    "editorGroupHeader.tabsBackground": "#061115",
+    "statusBar.noFolderBackground": "#061115",
+    "tab.border": "#1e4f61",
+    "editorHoverWidget.background": "#061115",
+    "menu.background": "#061115",
+    "debugToolBar.background": "#061115",
+    "editorBracketMatch.background": "#061115",
+    "quickInput.background": "#061115",
+    "editorOverviewRuler.border": "#061115",
+    "notifications.background": "#061115",
+    "breadcrumb.background": "#061115",
+    "terminal.background": "#061115",
+    "terminal.foreground": "#d9d7d6",
+    "terminal.selectionBackground": "#242f33",
+    "terminal.ansiBlack": "#1c252c",
+    "terminal.ansiRed": "#df5b61",
+    "terminal.ansiGreen": "#78b892",
+    "terminal.ansiYellow": "#de8f78",
+    "terminal.ansiBlue": "#6791c9",
+    "terminal.ansiMagenta": "#bc83e3",
+    "terminal.ansiCyan": "#67afc1",
+    "terminal.ansiWhite": "#d9d7d6",
+    "terminal.ansiBrightBlack": "#484e5b",
+    "terminal.ansiBrightRed": "#f16269",
+    "terminal.ansiBrightGreen": "#8cd7aa",
+    "terminal.ansiBrightYellow": "#e9967e",
+    "terminal.ansiBrightBlue": "#79aaeb",
+    "terminal.ansiBrightMagenta": "#c488ec",
+    "terminal.ansiBrightCyan": "#7acfe4",
+    "terminal.ansiBrightWhite": "#e5e5e5"
+  },
+
+
   "git.confirmSync": false,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -114,11 +170,11 @@
   "gitlens.codeLens.scopes": ["document", "containers"],
   "gitlens.currentLine.enabled": false,
   "editor.cursorBlinking": "solid",
-  "workbench.activityBar.visible": true,
-  "workbench.sideBar.location": "right",
   "explorer.confirmDragAndDrop": false,
   "git.enableSmartCommit": true,
   "files.associations": {
     "qtilekeys": "bat"
-  }
+  },
+  "window.menuBarVisibility": "toggle",
+
 }
