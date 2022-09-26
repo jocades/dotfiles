@@ -116,8 +116,8 @@ keys.extend([
 #   ", "   ", "   ", "   ", "  ", "   ", "   ", "   ", "   ",
 
 groups = [
-    Group("1", label="1", layout='columns', spawn='brave'),
-    Group("2", label="2", layout='columns', spawn='kitty -e tmux a'),
+    Group("1", label="1", layout='columns', spawn=browser),
+    Group("2", label="2", layout='columns', spawn=terminal),
     Group("3", label="3", layout='columns'),
     Group("4", label="4"),
     Group("5", label="5"),
@@ -228,7 +228,7 @@ dgroups_key_binder = None
 dgroups_app_rules = []
 follow_mouse_focus = True
 bring_front_click = False
-cursor_warp = True
+cursor_warp = False
 auto_fullscreen = True
 focus_on_window_activation = 'focus'
 reconfigure_screens = True

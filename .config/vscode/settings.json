@@ -92,14 +92,31 @@
   "editor.minimap.enabled": true,
   "editor.scrollbar.vertical": "hidden",
   "workbench.sideBar.location": "left",
-  "workbench.colorTheme": "Night Owl (No Italics)",
+  "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
   "security.workspace.trust.untrustedFiles": "open",
   "glassit.alpha": 230,
   "explorer.confirmDelete": false,
 
 // Token colors
   "editor.tokenColorCustomizations": {
-    "comments": "#42553c"
+    "comments": "#42553c",
+    // "textMateRules": [
+    //   {
+    //     "scope": "variable.other.readwrite",
+    //     "settings": {
+    //       "foreground": "#e2d3d3",
+    //       "fontStyle": ""
+    //     }
+    //   }
+      // {
+      //   "scope": "variable.parameter",
+      //   "settings": {
+      //     "foreground": "#c7bc99",
+      //     "fontStyle": "italic"
+      //   }
+      // }
+
+    // ]
   },
 
 // UI colors
@@ -111,7 +128,6 @@
     "list.hoverBackground": "#0D181C",
     "editorWidget.background": "#0D181C",
     "panel.background": "#0D181C",
-    "titleBar.activeBackground": "#0D181C",
     "breadcrumbPicker.background": "#0D181C",
     "settings.dropdownBackground": "#0D181C",
     "settings.numberInputBackground": "#0D181C",
@@ -157,7 +173,12 @@
     "terminal.ansiBrightCyan": "#7acfe4",
     "terminal.ansiBrightWhite": "#e5e5e5"
   },
-
+  "customizeUI.activityBar": "bottom",
+  "customizeUI.font.regular": "Roboto",
+  "customizeUI.fontSizeMap": {
+    "13px": "12px",
+    "monospace": "12px"
+  },
 
   "git.confirmSync": false,
   "[javascript]": {
