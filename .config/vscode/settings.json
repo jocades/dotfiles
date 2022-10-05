@@ -85,6 +85,7 @@
   "editor.fontFamily": "JetBrainsMono Nerd Font",
   "editor.fontSize": 14,
   "workbench.iconTheme": "material-icon-theme",
+  "window.menuBarVisibility": "toggle",
   "window.restoreWindows": "all",
   "extensions.ignoreRecommendations": true,
   "editor.wordWrap": "off",
@@ -92,7 +93,7 @@
   "editor.minimap.enabled": true,
   "editor.scrollbar.vertical": "hidden",
   "workbench.sideBar.location": "left",
-  "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
+  "workbench.colorTheme": "Night Owl (No Italics)",
   "security.workspace.trust.untrustedFiles": "open",
   "glassit.alpha": 230,
   "explorer.confirmDelete": false,
@@ -187,7 +188,7 @@
   "prettier.semi": false,
   "editor.formatOnSave": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "editor.fontLigatures": false,
+  "editor.fontLigatures": true,
   "gitlens.codeLens.scopes": ["document", "containers"],
   "gitlens.currentLine.enabled": false,
   "editor.cursorBlinking": "solid",
@@ -196,6 +197,5 @@
   "files.associations": {
     "qtilekeys": "bat"
   },
-  "window.menuBarVisibility": "toggle",
 
 }

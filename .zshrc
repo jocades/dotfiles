@@ -15,15 +15,15 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 #neofetch
 
 # PATH variables
-export TERM='kitty'
+export TERM='xterm-256color'
 export EDITOR='nvim'
 export VISUAL='nvim'
 export HISTCONTROL=ignoreboth:erasedups
 
 # format `time` command
-export TIMEFMT=$'%J\n%U user\n%S system\n%P cpu\n%*E total'
+export TIMEFMT=$'%J\n%U user\n%s system\n%P cpu\n%*E total'
 
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
+# Keep N lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
@@ -55,7 +55,8 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # ----Manual configuration---- #
 
-PATH=/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/j0rdi/.local/bin:/home/j0rdi/prog/scripts/checkSize:
+PATH=/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/j0rdi/.local/bin:/home/j0rdi/.local/scripts
+
 
 # ---- ALIASES ---- #
 
@@ -67,20 +68,65 @@ alias lla='lsd -lha --group-dirs=first'
 alias ls='lsd --group-dirs=first'
 alias cat='bat'
 alias cl='clear'
+
+# File explorer
 alias e='ranger'
 
 # Python
-alias py="/usr/bin/python"
-# open img in terminal
+alias py="python"
+alias pm="python manage.py"
+alias bpy='bpython'
+
+# Open img in terminal
 alias icat="kitty +kitten icat"
 
-# nvim
+# Railway
+alias rw='/usr/bin/railway'
+
+# Neovim
 alias v='nvim'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-# set keyboard layout
+# Git
+alias g='git'
+alias glog='git log --oneline'
+alias gst='git status --short'
+alias gout='git checkout'
+alias gb='git branch'
+alias gp='git push'
+alias gf='git fetch'
+alias gl='git pull'
+function gcom() {
+  git add .
+  git commit -m "$1"
+}
+function gcomp() {
+  git add .
+  git commit -m "$1"
+  git push
+}
+
+#Tmux
+alias t='tmux'
+function ts() {
+  tmux new -s "$1"
+}
+function ta() {
+  tmux a -t "$1"
+}
+function ide() {
+  tmux split-window -v -p 25
+  tmux split-window -h -p 66
+  tmux split-window -h -p 50
+}
+function pide() {
+  tmux split-window -v -p 25
+  tmux split-window -h
+}
+
+# Set keyboard layout
 alias qwerty-gb="sudo localectl set-x11-keymap gb"
 alias qwerty-us="sudo localectl set-x11-keymap us"
 
@@ -150,44 +196,18 @@ bindkey "^[[3~" delete-char
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
-# Clear Screen == Ctrl + L 
-function clear-scrollback-buffer {
-  # Behavior of clear: 
-  # 1. clear scrollback if E3 cap is supported (terminal, platform specific)
-  # 2. then clear visible screen
-  # For some terminal 'e[3J' need to be sent explicitly to clear scrollback
-  clear && printf '\e[3J'
-  # .reset-prompt: bypass the zsh-syntax-highlighting wrapper
-  # https://github.com/sorin-ionescu/prezto/issues/1026
-  # https://github.com/zsh-users/zsh-autosuggestions/issues/107#issuecomment-183824034
-  # -R: redisplay the prompt to avoid old prompts being eaten up
-  # https://github.com/Powerlevel9k/powerlevel9k/pull/1176#discussion_r299303453
-  zle && zle .reset-prompt && zle -R
-}
-
-zle -N clear-scrollback-buffer
-bindkey '^L' clear-scrollback-buffer
-
 # ---- Plugins ---- #
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-sudo/sudo.plugin.zsh
 
+# Z history
+[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
+
 # Fzf:
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # --- Functions ---- #
-# Destroy file
-function rmk(){
-	scrub -p dod $1
-	shred -zun 10 -v $1
-}
-
-# Make folders
-function mkt(){
-	mkdir {dir1,dir2,dir3,dir4}
-}
-
 # Beautify 'man' colors
 function man() {
     env \

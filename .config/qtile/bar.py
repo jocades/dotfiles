@@ -264,36 +264,6 @@ def init_widgets_list():
             mouse_callbacks={"Button3": lambda: qtile.cmd_spawn(
                 "kitty -e pulsemixer")},
         ),
-        # Doesn't work with Spotify so its disabled!
-        # widget.TextBox(
-        #    text="\u2572",
-        #    font="Inconsolata for powerline",
-        #    fontsize="33",
-        #    padding=0,
-        #    background=colors[13],
-        #    foreground=colors[0],
-        # ),
-        # widget.Mpd2(
-        #   background=colors[13],
-        #   foreground=colors[0],
-        #   idle_message=" ",
-        #   idle_format="{idle_message} Not Playing",
-        #   status_format="  {artist}/{title} [{updating_db}]",
-        #   font="Iosevka Nerd Font",
-        #   fontsize=15,
-        # ),
-        # This one works with Spotify, enable if you want!
-        # widget.Mpris2(
-        #    background=colors[13],
-        #    foreground=colors[0],
-        #    name="spotify",
-        #    objname="org.mpris.MediaPlayer2.spotify",
-        #    fmt="\u2572   {}",
-        #    display_metadata=["xesam:title", "xesam:artist"],
-        #    scroll_chars=20,
-        #    font="Iosevka Nerd Font",
-        #    fontsize=15,
-        # ),
         widget.TextBox(
             text="\ue0be",
             font="Inconsolata for powerline",
