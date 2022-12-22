@@ -18,6 +18,8 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 export TERM='xterm-256color'
 export EDITOR='nvim'
 export VISUAL='nvim'
+export BROWSER='brave'
+export ANDROID_HOME=/home/j0rdi/Android/Sdk
 export HISTCONTROL=ignoreboth:erasedups
 
 # format `time` command
@@ -31,6 +33,7 @@ HISTFILE=~/.zsh_history
 # Use modern completion system
 autoload -Uz compinit
 compinit
+
 # auto CD
 setopt autocd
 bindkey -e
@@ -55,7 +58,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # ----Manual configuration---- #
 
-PATH=/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/j0rdi/.local/bin:/home/j0rdi/.local/scripts
+PATH=/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/j0rdi/.local/bin:/home/j0rdi/.local/scripts:$ANDROID_HOME/platform-tools:/home/j0rdi/.deno/bin
 
 
 # ---- ALIASES ---- #
@@ -92,39 +95,52 @@ alias fgrep='fgrep --color=auto'
 # Git
 alias g='git'
 alias glog='git log --oneline'
-alias gst='git status --short'
-alias gout='git checkout'
+alias gstat='git status --short'
+alias gch='git checkout'
 alias gb='git branch'
 alias gp='git push'
 alias gf='git fetch'
 alias gl='git pull'
+
 function gcom() {
   git add .
   git commit -m "$1"
 }
+
 function gcomp() {
   git add .
   git commit -m "$1"
   git push
 }
 
-#Tmux
+# Tmux
 alias t='tmux'
+
 function ts() {
   tmux new -s "$1"
 }
+
 function ta() {
   tmux a -t "$1"
 }
+
 function ide() {
   tmux split-window -v -p 25
   tmux split-window -h -p 66
   tmux split-window -h -p 50
 }
+
 function pide() {
   tmux split-window -v -p 25
   tmux split-window -h
 }
+
+# Docker
+alias d='docker'
+alias dco='docker-compose'
+
+# NPM
+alias nr='npm run'
 
 # Set keyboard layout
 alias qwerty-gb="sudo localectl set-x11-keymap gb"
@@ -243,6 +259,4 @@ function fzf-lovely(){
 	                          cat {}) 2> /dev/null | head -500'
 	fi
 }
-
-
 

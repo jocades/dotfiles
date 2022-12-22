@@ -4,11 +4,13 @@ from libqtile import layout, bar, hook
 from libqtile.config import Click, Drag, DropDown, Group, Key, Match, ScratchPad, Screen, Rule
 from libqtile.command import lazy
 from bar import widget_defaults, init_widgets_list
+# from thin_bar import widget_defaults, init_widgets_list
 
 
 mod = "mod4"
 terminal = "kitty"
 browser = "brave"
+editor = "code"
 file_manager = "thunar"
 
 keys = [
@@ -34,6 +36,7 @@ keys = [
         file_manager), desc='Launch file manager'),
     Key([mod], "b", lazy.spawn(browser), desc='Launch browser'),
     Key([mod], "c", lazy.spawn("code"), desc='Launch vscode'),
+    Key([mod], 'd', lazy.spawn("discord")),
     Key([mod], "r", lazy.spawn("rofi -show drun"), desc='Spawn app launcher'),
     Key([mod], "F11", lazy.spawn("rofi-theme-selector"), desc='Change rofi theme'),
 
@@ -43,6 +46,7 @@ keys = [
     # Monitor focus
     Key([mod], "w", lazy.to_screen(0), desc='Focus monitor 1'),
     Key([mod], "e", lazy.to_screen(1), desc='Focus monitor 2'),
+    Key([mod], "t", lazy.to_screen(2), desc='Focus monitor 3'),
 
     # Window focus
     Key([mod], "h", lazy.layout.left(), desc='Focus window left'),
@@ -113,16 +117,18 @@ keys.extend([
 ])
 
 
-#   ", "   ", "   ", "   ", "  ", "   ", "   ", "   ", "   ",
+#  ", "   ", "   ", "   ", "  ", "   ", "   ", "   ", "   ", 
 
 groups = [
     Group("1", label="1", layout='columns', spawn=browser),
-    Group("2", label="2", layout='columns', spawn=terminal),
+    Group("2", label="2", layout='columns'),
     Group("3", label="3", layout='columns'),
-    Group("4", label="4"),
-    Group("5", label="5"),
-    Group("6", label="6"),
-    Group("7", label=""),
+    Group("4", label="6"),
+    Group("5", label="9"),
+    Group("6", label=""),
+    Group("7", label="ﭮ"),
+    Group("8", label=""),
+    Group("9", label=""),
 ]
 
 for i in groups:
@@ -145,13 +151,15 @@ for i in groups:
 
 
 groups.append(ScratchPad('scratchpad', [
-    DropDown('term', 'kitty', width=0.4, height=0.6, x=0.3, y=0.2),
-    DropDown('files', 'thunar', width=0.35, height=0.8, x=0.3, y=0.1),
+    DropDown('term', terminal, width=0.8, height=0.8, x=0.1, y=0.1),
+    DropDown('files', file_manager, width=0.35, height=0.8, x=0.3, y=0.1),
+    DropDown('search', 'firefox', width=0.6, height=0.8, x=0.2, y=0.1),
 ]))
 
 keys.extend([
     Key(['mod1'], '1', lazy.group['scratchpad'].dropdown_toggle('term')),
     Key(['mod1'], '2', lazy.group['scratchpad'].dropdown_toggle('files')),
+    Key(['mod1'], '3', lazy.group['scratchpad'].dropdown_toggle('search')),
 ])
 
 
@@ -213,8 +221,10 @@ mouse = [
 
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=20, opacity=1, margin=[3, 5, 0, 5])),
-            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=20, opacity=1, margin=[1, 1, 0, 1]))]
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=18, opacity=1, margin=[0, 0, 0, 0])),
+            Screen(top=bar.Bar(widgets=init_widgets_screen2(),
+                   size=18, opacity=1, margin=[0, 0, 0, 0])),
+            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=18, opacity=1, margin=[0, 0, 0, 0]))]
 
 
 if __name__ in ["config", "__main__"]:

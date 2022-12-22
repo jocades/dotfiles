@@ -1,28 +1,47 @@
 // Place your key bindings in this file to override the defaults
 [
+  {
+    "key": "ctrl+r",
+    "command": "extension.vim_ctrl+d",
+    "when": "editorTextFocus && vim.active && vim.use<C-d> && !inDebugRepl"
+  },
 
   {
     "key": "ctrl+n",
     "command": "explorer.newFile"
   },
-  {
-    "key": "ctrl+shift+n",
-    "command": "-workbench.action.newWindow"
-  },
+
   {
     "key": "ctrl+shift+n",
     "command": "explorer.newFolder"
   },
   {
-    "key": "ctrl+tab",
-    "command": "workbench.action.nextEditor"
-  },
-  {
-    "key": "ctrl+shift+tab",
-    "command": "workbench.action.previousEditor"
+    "key": "alt+d",
+    "command": "editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
   },
 
   // VIM
+  {
+    "key": "ctrl+[",
+    "command": "-editor.action.outdentLines",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+
+
+  {
+    "key":     "ctrl+[",
+    "command": "workbench.action.terminal.focus"
+},
+{
+    "key":     "ctrl+[",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when":    "terminalFocus"
+},
+{
+  "key": "ctrl+shift+[",
+  "command": "workbench.action.terminal.toggleTerminal"
+},
   {
     "key": "tab",
     "command": "selectNextSuggestion",
@@ -53,16 +72,6 @@
   },
   //
   
-  {
-    "key": "ctrl+[",
-    "command": "-editor.action.outdentLines",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+[",
-    "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
-  },
   {
     "key": "ctrl+`",
     "command": "-workbench.action.terminal.toggleTerminal",
@@ -104,5 +113,45 @@
   {
     "key": "ctrl+i",
     "command": "editor.action.inspectTMScopes"
+  },
+  {
+    "key": "alt+r",
+    "command": "-toggleSearchEditorRegex",
+    "when": "inSearchEditor && searchInputBoxFocus"
+  },
+  {
+    "key": "alt+r",
+    "command": "-workbench.action.terminal.toggleFindRegex",
+    "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "alt+r",
+    "command": "-toggleFindRegex",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+r",
+    "command": "-toggleSearchRegex",
+    "when": "searchViewletFocus"
+  },
+  {
+    "key": "alt+r",
+    "command": "editor.action.rename",
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "f2",
+    "command": "-editor.action.rename",
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "f2",
+    "command": "-renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   }
 ]

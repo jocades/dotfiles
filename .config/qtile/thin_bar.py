@@ -63,120 +63,6 @@ def init_widgets_list():
             foreground=colors[11],
         ),
         widget.TextBox(
-            text=" ",
-            fontsize=12,
-            padding=0,
-            background=colors[11],
-            foreground=colors[2],
-        ),
-        widget.DF(
-            fmt="{}",
-            partition="/home",
-            format="{uf}{m} ({r:.0f}%)",
-            visible_on_warn=False,
-            background=colors[11],
-            foreground=colors[2],
-            padding=5,
-        ),
-
-        widget.Prompt(
-            prompt="{0}@{1}: ".format(os.environ["USER"],
-                                      socket.gethostname()),
-            background=colors[0],
-            bell_style='audible',
-            foreground=gruvbox['red'],
-            cursor=True,
-            cursor_blink=0.5,
-            max_history=100,
-            fontsize=12
-        ),
-        widget.TextBox(
-            text="\ue0be",
-            font="Inconsolata for powerline",
-            fontsize="33",
-            padding=0,
-            background=colors[11],
-            foreground=colors[12],
-        ),
-        widget.TextBox(
-            text=" ",
-            fontsize=16,
-            foreground=colors[2],
-            background=colors[12],
-            padding=0,
-            mouse_callbacks={
-                "Button1": lambda: qtile.cmd_spawn("kitty -e bashtop")},
-        ),
-        widget.Memory(
-            background=colors[12],
-            foreground=colors[2],
-            mouse_callbacks={
-                'Button1': lambda: qtile.cmd_spawn('kitty -e bashtop')},
-            fmt='{}',
-            measure_mem='G',
-        ),
-        widget.Sep(
-            padding=8,
-            linewidth=0,
-            background=colors[12],
-        ),
-        widget.TextBox(
-            text="\ue0be",
-            font="Inconsolata for powerline",
-            fontsize="33",
-            padding=0,
-            background=colors[12],
-            foreground=colors[7],
-        ),
-        widget.Sep(
-            padding=6,
-            linewidth=0,
-            background=colors[7],
-        ),
-        widget.TextBox(
-            text="龍 ",
-            fontsize=16,
-            padding=0,
-            background=colors[7],
-            foreground=colors[2],
-            mouse_callbacks={
-                "Button1": lambda: qtile.cmd_spawn("kitty -e bashtop")},
-        ),
-        widget.CPU(
-            format='{freq_current}GHz {load_percent}%',
-            background=colors[7],
-            foreground=colors[2],
-            icons_size=18,
-            padding=4,
-            mouse_callbacks={
-                "Button1": lambda: qtile.cmd_spawn("kitty -e bashtop")},
-        ),
-        widget.TextBox(
-            text="\ue0be",
-            font="Inconsolata for powerline",
-            fontsize="33",
-            padding=0,
-            background=colors[7],
-            foreground=gruvbox['bg'],
-        ),
-
-        # widget.WindowName(
-        #     fontsize=10,
-        #     background=gruvbox['bg'],
-        #     foreground=colors[7],
-        # ),
-        widget.Spacer(
-            length=350, background=gruvbox['bg']
-        ),
-        widget.TextBox(
-            text="\ue0be",
-            font="Inconsolata for powerline",
-            fontsize="33",
-            padding=0,
-            background=gruvbox['bg'],
-            foreground='#3A3845',
-        ),
-        widget.TextBox(
             text="\ue0be",
             font="Inconsolata for powerline",
             fontsize="33",
@@ -273,23 +159,9 @@ def init_widgets_list():
             fontsize="33",
             padding=0,
             background=colors[13],
-            foreground=colors[14],
-        ),
-        widget.KeyboardLayout(
-            fmt=" {} הּ ",
-            configured_keyboards=["us", "es", 'gb'],
-            padding=0,
-            background=colors[14],
-            foreground=colors[0],
-        ),
-        widget.TextBox(
-            text="\ue0be",
-            font="Inconsolata for powerline",
-            fontsize="33",
-            padding=0,
-            background=colors[14],
             foreground=colors[15],
         ),
+
         widget.TextBox(
             text="  ",
             fontsize="12",
@@ -300,7 +172,7 @@ def init_widgets_list():
         widget.Clock(
             foreground=colors[0],
             background=colors[15],
-            format="%A, %B %d",
+            format="%d/%m/%Y",
         ),
         widget.Sep(
             padding=6,
