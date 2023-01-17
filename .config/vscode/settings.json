@@ -84,8 +84,8 @@
   },
   // EDITOR SETTINGS
   "editor.fontFamily": "JetBrainsMono Nerd Font",
-  "editor.fontSize": 13,
-  "editor.lineNumbers": "relative",
+  "editor.fontSize": 13.5,
+  "editor.lineNumbers": "on",
   "workbench.iconTheme": "material-icon-theme",
   "window.restoreWindows": "all",
   "extensions.ignoreRecommendations": true,

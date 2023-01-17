@@ -172,8 +172,8 @@ main_theme = {
 }
 
 columns_theme = {
-    'margin': 2,
-    'margin_on_single': 5,
+    'margin': 0,
+    'margin_on_single': 0,
     'border_on_single': False,
     "border_width": 1,
     "border_focus": "#71a381",
@@ -222,8 +222,6 @@ mouse = [
 
 def init_screens():
     return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=18, opacity=1, margin=[0, 0, 0, 0])),
-            Screen(top=bar.Bar(widgets=init_widgets_screen2(),
-                   size=18, opacity=1, margin=[0, 0, 0, 0])),
             Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=18, opacity=1, margin=[0, 0, 0, 0]))]
 
 

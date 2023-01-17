@@ -17,6 +17,10 @@ return {
     override_options = overrides.treesitter,
   },
 
+  ["hrsh7th/nvim-cmp"] = {
+    override_options = overrides.cmp, -- change order of sources in popup window, 1st = lsp, 2nd = buffer
+  },
+
   ["williamboman/mason.nvim"] = {
     override_options = overrides.mason,
   },
@@ -33,6 +37,11 @@ return {
     end,
   },
 
-  -- remove plugin
+  -- Colored parentheses, brackets, etc.
+  ["p00f/nvim-ts-rainbow"] = {},
+
+  -- remove plugitruen
   -- ["hrsh7th/cmp-path"] = false,
+
+  -- ["lukas-reineke/indent-blankline.nvim"] = false,
 }

@@ -4,10 +4,17 @@ M.treesitter = {
   ensure_installed = {
     "vim",
     "lua",
+    "typescript",
+    "javascript",
+    "tsx",
+    "python",
     "html",
     "css",
-    "javascript",
-    "python",
+  },
+  rainbow = {
+    enable = true,
+    extended_mode = false,
+    max_file_lines = nil,
   },
 }
 
@@ -30,6 +37,17 @@ M.mason = {
     -- shell
     "shfmt",
     "shellcheck",
+  },
+}
+
+-- Change the order in pop-up menu.
+M.cmp = {
+  sources = {
+    { name = "nvim_lsp" },
+    { name = "buffer" },
+    { name = "nvim_lua" },
+    { name = "luasnip" },
+    { name = "path" },
   },
 }
 
