@@ -84,7 +84,7 @@
   },
   // EDITOR SETTINGS
   "editor.fontFamily": "JetBrainsMono Nerd Font",
-  "editor.fontSize": 13.5,
+  "editor.fontSize": 14,
   "editor.lineNumbers": "on",
   "workbench.iconTheme": "material-icon-theme",
   "window.restoreWindows": "all",
@@ -410,5 +410,10 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.codeLens.authors.enabled": false,
-  "window.menuBarVisibility": "toggle"
+  "window.menuBarVisibility": "toggle",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "[python]": {
+    "editor.formatOnType": true
+  }
 }

@@ -1,18 +1,10 @@
 #!/bin/bash
 
 function run {
-	if ! pgrep -x $(basename $1 | head -c 15) 1>/dev/null; then
-		$@ &
-	fi
+    if ! pgrep -x $(basename $1 | head -c 15) 1>/dev/null; then
+        $@ &
+    fi
 }
-
-# Remap CONTROL with CAPS_LOCK
-# EXAMPLE:
-# clear lock
-# clear control
-# keycode 66 = Control_L Caps_Lock NoSymbol NoSymbol
-# keycode 37 = Caps_Lock
-# add control = Caps_Lock Control_L Control_R
 
 # Wallpaper
 #run feh --bg-scale --no-xinerama /home/j0rdi/images/morning.png &
@@ -20,12 +12,12 @@ run feh --bg-fill /home/j0rdi/images/wallpapers/nord/the-great-wave.png &
 # ~/.fehbg &
 
 # Display
-run xrandr --output HDMI-0 --primary --mode 1920x1080 --pos 0x0 --rate 143.92 --output DP-2 --mode 2560x1440 --pos 1920x0 --rate 74.97
+run xrandr --output DP-0 --mode 1920x1080 --pos 0x0 --rate 164.92 --rotate normal --output HDMI-0 --primary --mode 1920x1080 --pos 1920x0 --rate 143.92 --rotate normal
 # run xrandr --output DVI-D-0 --primary --mode 1920x1080 --pos 0x0 --rate 143.92 --output HDMI-0 --mode 1920x1080 --pos 1920x0
 # xrandr --output DVI-D-0 --primary --rate 143.92 --mode 1920x1080 --pos 1081x1440 --rotate normal --output HDMI-0 --mode 1920x1080 --pos 0x360 --rotate normal
 
 #run xrandr --output HDMI-0 --primary --mode 1920x1080 --rate 143.92 --output DVI-D-0 --mode 1920x1080
-#run xrandr --output HDMI-0 --primary --mode 1920x1080 --rate 143.92
+# run xrandr --output HDMI-0 --mode 1920x1080 --rate 143.92
 #autorandr horizontal
 
 #Set native resolution IF it does not exist in xrandr
@@ -46,7 +38,7 @@ xmodmap ~/.Xmodmap &
 picom --config ~/.config/qtile/scripts/picom.conf &
 
 # Start utility applications at boot time
-run discord &
+#run discord &
 
 run variety &
 run nm-applet &

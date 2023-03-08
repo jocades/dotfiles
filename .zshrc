@@ -15,7 +15,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 #neofetch
 
 # PATH variables
-export TERM='xterm-256color'
+export TERM='xterm-kitty'
 export EDITOR='nvim'
 export VISUAL='nvim'
 export BROWSER='brave'
@@ -102,12 +102,12 @@ alias gp='git push'
 alias gf='git fetch'
 alias gl='git pull'
 
-function gcom() {
+function gcm() {
   git add .
   git commit -m "$1"
 }
 
-function gcomp() {
+function gcmp() {
   git add .
   git commit -m "$1"
   git push

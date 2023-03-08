@@ -1,4 +1,6 @@
 import os
+
+
 import subprocess
 from libqtile import layout, bar, hook
 from libqtile.config import Click, Drag, DropDown, Group, Key, Match, ScratchPad, Screen, Rule
@@ -8,18 +10,18 @@ from bar import widget_defaults, init_widgets_list
 
 
 mod = "mod4"
-terminal = "kitty"
+term = "kitty"
 browser = "brave"
 editor = "code"
 file_manager = "thunar"
+
 
 keys = [
     # Qtile window manager
     Key([mod, "control"], "r", lazy.restart(), desc='Restart Qtile'),
     Key([mod, "control"], "p", lazy.shutdown(), desc='Shutdown Qtile'),
     Key([mod, "control"], "s", lazy.spawn(
-        f'{terminal} --hold -e python3 .config/qtile/scripts/qtile-keys'), desc='Show qtile keys'),
-
+        f'{term} --hold -e python3 .config/qtile/scripts/qtile-keys'), desc='Show qtile keys'),
 
     # Common
     Key([mod], "q", lazy.window.kill(), desc='Kill window'),
@@ -29,9 +31,9 @@ keys = [
     Key([mod], "p", lazy.spawncmd(), desc='Spawn prompt in the bar'),
 
     # Launch
-    Key([mod], "Return", lazy.spawn(terminal), desc='Launch terminal'),
+    Key([mod], "Return", lazy.spawn(term), desc='Launch terminal'),
     Key([mod, 'shift'], "Return", lazy.spawn(
-        f'{terminal} -e tmux a'), desc='Launch tmux terminal attached to last session'),
+        f'{term} -e tmux a'), desc='Launch tmux terminal attached to last session'),
     Key([mod, 'shift'], "f", lazy.spawn(
         file_manager), desc='Launch file manager'),
     Key([mod], "b", lazy.spawn(browser), desc='Launch browser'),
@@ -151,7 +153,7 @@ for i in groups:
 
 
 groups.append(ScratchPad('scratchpad', [
-    DropDown('term', terminal, width=0.8, height=0.8, x=0.1, y=0.1),
+    DropDown('term', term, width=0.8, height=0.8, x=0.1, y=0.1),
     DropDown('files', file_manager, width=0.35, height=0.8, x=0.3, y=0.1),
     DropDown('search', 'firefox', width=0.6, height=0.8, x=0.2, y=0.1),
 ]))
@@ -172,8 +174,8 @@ main_theme = {
 }
 
 columns_theme = {
-    'margin': 0,
-    'margin_on_single': 0,
+    'margin': 2,
+    'margin_on_single': 5,
     'border_on_single': False,
     "border_width": 1,
     "border_focus": "#71a381",
@@ -222,7 +224,9 @@ mouse = [
 
 def init_screens():
     return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=18, opacity=1, margin=[0, 0, 0, 0])),
-            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=18, opacity=1, margin=[0, 0, 0, 0]))]
+            Screen(top=bar.Bar(widgets=init_widgets_screen2(),
+                   size=18, opacity=1, margin=[0, 0, 0, 0]))
+            ]
 
 
 if __name__ in ["config", "__main__"]:
