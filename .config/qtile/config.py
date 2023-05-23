@@ -1,6 +1,4 @@
 import os
-
-
 import subprocess
 from libqtile import layout, bar, hook
 from libqtile.config import Click, Drag, DropDown, Group, Key, Match, ScratchPad, Screen, Rule
@@ -224,8 +222,7 @@ mouse = [
 
 def init_screens():
     return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=18, opacity=1, margin=[0, 0, 0, 0])),
-            Screen(top=bar.Bar(widgets=init_widgets_screen2(),
-                   size=18, opacity=1, margin=[0, 0, 0, 0]))
+            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=18, opacity=1, margin=[0, 0, 0, 0]))
             ]
 
 

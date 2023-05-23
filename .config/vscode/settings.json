@@ -403,9 +403,10 @@
   "editor.inlineSuggest.enabled": true,
   "github.copilot.enable": {
     "*": true,
-    "yaml": false,
     "plaintext": false,
-    "markdown": true
+    "markdown": true,
+    "scminput": false,
+    "yaml": false
   },
   "typescript.updateImportsOnFileMove.enabled": "always",
   "gitlens.codeLens.recentChange.enabled": false,
@@ -415,5 +416,15 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "[python]": {
     "editor.formatOnType": true
+  },
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
   }
 }

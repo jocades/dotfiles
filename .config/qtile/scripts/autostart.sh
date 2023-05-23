@@ -12,11 +12,12 @@ run feh --bg-fill /home/j0rdi/images/wallpapers/nord/the-great-wave.png &
 # ~/.fehbg &
 
 # Display
-run xrandr --output DP-0 --mode 1920x1080 --pos 0x0 --rate 164.92 --rotate normal --output HDMI-0 --primary --mode 1920x1080 --pos 1920x0 --rate 143.92 --rotate normal
+# run xrandr --output DP-0 --mode 1920x1080 --pos 0x0 --rate 164.92 --rotate normal --output HDMI-0 --primary --mode 1920x1080 --pos 1920x0 --rate 143.92 --rotate normal
 # run xrandr --output DVI-D-0 --primary --mode 1920x1080 --pos 0x0 --rate 143.92 --output HDMI-0 --mode 1920x1080 --pos 1920x0
 # xrandr --output DVI-D-0 --primary --rate 143.92 --mode 1920x1080 --pos 1081x1440 --rotate normal --output HDMI-0 --mode 1920x1080 --pos 0x360 --rotate normal
 
-#run xrandr --output HDMI-0 --primary --mode 1920x1080 --rate 143.92 --output DVI-D-0 --mode 1920x1080
+run xrandr --output HDMI-0 --primary --mode 1920x1080 --pos 0x0 --rate 143.92 --output DVI-D-0 --mode 1920x1080 --pos 1920x0
+# run xrandr --output HDMI-0 --primary --mode 1920x1080 --rate 143.92 --output DVI-D-0 --mode 1920x1080
 # run xrandr --output HDMI-0 --mode 1920x1080 --rate 143.92
 #autorandr horizontal
 

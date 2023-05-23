@@ -30,6 +30,8 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
+# Script auto-completion
+
 # Use modern completion system
 autoload -Uz compinit
 compinit
@@ -58,7 +60,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # ----Manual configuration---- #
 
-PATH=/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/j0rdi/.local/bin:/home/j0rdi/.local/scripts:$ANDROID_HOME/platform-tools:/home/j0rdi/.deno/bin
+PATH=/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/j0rdi/.local/bin:/home/j0rdi/.local/scripts:$ANDROID_HOME/platform-tools:/home/j0rdi/.deno/bin:/opt/android-sdk/cmdline-tools/latest/bin:
 
 
 # ---- ALIASES ---- #
@@ -122,17 +124,6 @@ function ts() {
 
 function ta() {
   tmux a -t "$1"
-}
-
-function ide() {
-  tmux split-window -v -p 25
-  tmux split-window -h -p 66
-  tmux split-window -h -p 50
-}
-
-function pide() {
-  tmux split-window -v -p 25
-  tmux split-window -h
 }
 
 # Docker
@@ -260,3 +251,4 @@ function fzf-lovely(){
 	fi
 }
 
+compdef '_files' -g "*.c" comp
